@@ -14,8 +14,32 @@ def test_nw_alignment():
     """
     seq1, _ = read_fasta("./data/test_seq1.fa")
     seq2, _ = read_fasta("./data/test_seq2.fa")
-    pass
+    # Initializing the NeedlemanWunsch class
+    nw = NeedlemanWunsch(
+        sub_matrix_file="./substitution_matrices/BLOSUM62.mat",
+        gap_open=-10,
+        gap_extend=-1
+    )
+    # Performing the alignment
+    nw.align(seq1, seq2)
+
+    # Drop '-' from seqA_align and seqB_align and assert that the sequences are equal to seq3 and seq4
+    assert nw.seqA_align.replace("-", "") == seq1
+    assert nw.seqB_align.replace("-", "") == seq2
+
+    # Asserting that the alignment score is correct
+    score = 0
+
+    # Calculating the score of the final alignments
     
+
+
+
+
+
+    assert nw.score == score
+                
+
 
 def test_nw_backtrace():
     """
@@ -27,7 +51,22 @@ def test_nw_backtrace():
     """
     seq3, _ = read_fasta("./data/test_seq3.fa")
     seq4, _ = read_fasta("./data/test_seq4.fa")
-    pass
+    # Initializing the NeedlemanWunsch class
+    nw = NeedlemanWunsch(
+        sub_matrix_file="./substitution_matrices/BLOSUM62.mat",
+        gap_open=-10,
+        gap_extend=-1
+    )
+    # Performing the alignment
+    nw.align(seq3, seq4)
+
+    # Drop '-' from seqA_align and seqB_align and assert that the sequences are equal to seq3 and seq4
+    assert nw.seqA_align.replace("-", "") == seq3
+    assert nw.seqB_align.replace("-", "") == seq4
+
+    # Asserting that the backtrace is correct
+    assert nw.seqA_align == "MAVHQLIRRP"
+    assert nw.seqB_align == "M---QLIRHP"
 
 
 
