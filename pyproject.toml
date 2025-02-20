@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "HW5-NW"
+version = "0.2.5"
+authors = [
+    "Abe Arab <abolfazl.arab@ucsf.edu>",
+]
+license = "MIT"
+readme = "README.md"
+packages = [
+	{ include = "align" },
+	{ include = "pyproject.toml" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+pytest = "*"
+pandas = "*"
+numpy = "*"
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+tomli = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
