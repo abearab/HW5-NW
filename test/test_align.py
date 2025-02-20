@@ -21,25 +21,14 @@ def test_nw_alignment():
         gap_extend=-1
     )
     # Performing the alignment
-    nw.align(seq1, seq2)
+    _ = nw.align(seq1, seq2)
 
     # Drop '-' from seqA_align and seqB_align and assert that the sequences are equal to seq3 and seq4
     assert nw.seqA_align.replace("-", "") == seq1
     assert nw.seqB_align.replace("-", "") == seq2
 
     # Asserting that the alignment score is correct
-    score = 0
-
-    # Calculating the score of the final alignments
-    
-
-
-
-
-
-    assert nw.score == score
-                
-
+    assert nw.alignment_score == 4
 
 def test_nw_backtrace():
     """
@@ -67,6 +56,7 @@ def test_nw_backtrace():
     # Asserting that the backtrace is correct
     assert nw.seqA_align == "MAVHQLIRRP"
     assert nw.seqB_align == "M---QLIRHP"
+    assert nw.alignment_score == 17
 
 
 
