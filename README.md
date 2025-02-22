@@ -6,6 +6,7 @@ Needleman Wunsch Algorithm
 I have implemented the Needleman-Wunsch algorithm for global pairwise sequence alignment. The code is organized into a package structure, with the main functionality in the `align` module and unit tests in the `test` module. The package can be installed using pip, and I have included a `pyproject.toml` file for dependency management. In addition to the resources provided in the assignment, I found the following resources helpful: https://colab.research.google.com/github/zaneveld/full_spectrum_bioinformatics/blob/master/content/08_phylogenetic_trees/needleman_wunsch_alignment.ipynb
 
 <details><summary>Click to expand</summary>
+  
   # Assignment Overview
   The purpose of this assigment is to have you implement the Needleman-Wunsch global pairwise sequence alignment algorithm (dynamic programming).
   See this [video](https://www.youtube.com/watch?v=NqYY0PJbD3s) for a walk through of the algorithm implementation. In addition, this is also a helpful resource: https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-5.
